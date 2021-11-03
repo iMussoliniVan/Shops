@@ -1,0 +1,19 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Удаление товара</title>
+</head>
+<body>
+    <div>
+        <h3>Удаление товара</h3>
+        <form method="post">
+            <input type="hidden" value="@ViewBag.ProductId" name="id" />
+            <input type="submit" value="удалить" />
+        </form>
+    </div>
+</body>
+</html>

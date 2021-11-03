@@ -1,0 +1,50 @@
+﻿@model Test.Models.Shop
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tовары</title>
+</head>
+<body>
+    <h3>Товары</h3>
+    <table>
+        <tr>
+            <td>Название</td>
+            <td>Описание</td>
+            <td>Удалить</td>
+            <td>Редактировать</td>
+        </tr>
+        @foreach (var product in Model.ProductsLink)
+        {
+    <tr>
+        <td>@product.Name</td>
+        <td>@product.Description</td>
+        <td><a href="~/Home/Delete/@product.Id">Удалить</a></td>
+        <td><a href="~/Home/Redact/@product.Id">Редактировать</a></td>
+    </tr>
+        }
+    </table>
+    <div>
+        <h3>Добавление товара</h3>
+        <p>Для добавления товара заполните следующие поля:</p>
+        <form method="post">
+            <input type="hidden" value="@ViewBag.ShopId" name="ShopId" />
+            <input type="hidden" value="@Model" name="shop" />
+            <table>
+                <tr>
+                    <td>Имя:</td>
+                    <td><input type="text" name="Name" /> </td>
+                </tr>
+                <tr>
+                    <td>Описание:</td>
+                    <td><input type="text" name="Description" /></td>
+                </tr>
+                <tr><td><input type="submit" value="Добавить" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

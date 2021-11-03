@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Редактирование товара</title>
+</head>
+<body>
+    <div>
+        <h3>Редактирование товара</h3>
+        <form method="post">
+            <input type="hidden" value="@ViewBag.ProductId" name="Id" />
+            <table>
+                <tr>
+                    <td>Имя:</td>
+                    <td><input type="text" name="Name" /> </td>
+                </tr>
+                <tr>
+                    <td>Описание:</td>
+                    <td><input type="text" name="Description" /></td>
+                </tr>
+                <tr><td><input type="submit" value="Редактировать" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

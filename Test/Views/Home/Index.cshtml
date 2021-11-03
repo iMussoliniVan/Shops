@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Test.Models.Shop>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Список магазинов</title>
+</head>
+<body>
+    <h3>Магазины</h3>
+    <table>
+        <tr>
+            <td>Название</td>
+            <td>Адрес</td>
+            <td>Время работы</td>
+            <td>Товары</td>
+        </tr>
+        @foreach (var shop in Model)
+        {
+            <tr>
+                <td>@shop.Name</td>
+                <td>@shop.Address</td>
+                <td>@shop.Work</td>
+                <td><a href="~/Home/Buy/@shop.Id">Товары</a></td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
